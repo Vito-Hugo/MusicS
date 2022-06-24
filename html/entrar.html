@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,16 @@
     <script src="https://kit.fontawesome.com/e31ec1b59d.js" crossorigin="anonymous"></script>
     <title>Login</title>
     <link rel="stylesheet" href="/css/entrar.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto&display=swap"
+        rel="stylesheet">
     <link rel="shortcut icon" href="/img/favicon-32x32.png">
 
 </head>
+
 <body>
     <navbar id="navbar">
         <div class="navbar-container">
-           <a href="/index.html"><img src="/img/Design_sem_nome__1_-removebg-preview.png" alt="" class="logo"></a> 
+            <a href="/index.html"><img src="/img/Design_sem_nome__1_-removebg-preview.png" alt="" class="logo"></a>
             <ul class="navbar-items">
                 <li class="navbar-item"><a href="/html/premium.html">Premium</a></li>
                 <li class="navbar-item"><a href="/html/ajuda.html">Ajuda</a></li>
@@ -34,8 +37,11 @@
                 <input type="password" name="password" id="password" placeholder="Digite sua senha">
                 <div class="underline"></div>
             </div>
-
-            <input type="submit" value="Continuar">
+            <br>
+                <div id="error" style="display: none; width: 100%;">                   
+                    <p>Dados incorretos, tente novamente</p>
+                </div>
+            <input type="button" value="Continuar" onclick="login()">
         </form>
         <div class="footer">
             <span>Ou conectar-se com </span>
@@ -55,6 +61,27 @@
             </div>
         </div>
     </main>
-    
+
 </body>
+
 </html>
+<script>
+    function login() {
+        var done = 0;
+        var usuario = document.getElementsByName('username')[0].value;
+        usuario = usuario.toLowerCase();
+        var senha = document.getElementsByName('password')[0].value;
+        seha = senha.toLowerCase();
+
+        if (usuario == "vitor" && senha == "240306") {            
+            window.location = "musica.html";
+            done = 1;
+        }
+        if (done == 0) {
+            // alert("Dados incorretos, tente novamente");
+           var error =  document.getElementById("error");
+            error.style.display = "block";
+
+        }
+    }
+</script>
