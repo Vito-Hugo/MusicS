@@ -130,7 +130,7 @@ input:focus{
 
 }
 
-input[type="submit"]{
+input[type="button"]{
     background-color: #C700FF;
     color: #fff;
     border: none;
